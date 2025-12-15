@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 800px;
   margin: auto;
   padding: 40px;
@@ -9,10 +9,22 @@ body {
 h1 {
   color: #F6F5FA;
 }
+h2 {
+  color: #F6F5FA;
+}
 
 p {
   line-height: 1.6;
   color: #E1E0E5;
+}
+
+.profile {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .profile img {
@@ -23,12 +35,17 @@ p {
   border-radius: 50%; /* circular photo */
 }
 a {
-  color: #0056b3;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #41F25B;            /* glow color (blueish) */
+  text-shadow:
+    0 0 5px #41F25B,
+    0 0 10px #41F25B,
+    0 0 20px #41F25B;
+    text-decoration: none;
 }
 
 
@@ -81,3 +98,50 @@ footer {
   height: 100vh;
   z-index: -1;
 }
+
+nav a {
+  color: white;              /* normal link color */
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+  color: #41F25B;            /* glow color (blueish) */
+  text-shadow:
+    0 0 5px #41F25B,
+    0 0 10px #41F25B,
+    0 0 20px #41F25B;
+    text-decoration: none;
+}
+
+
+.publications {
+  margin-top: 40px;
+  color: whitesmoke;
+}
+
+.publications h2 {
+  margin-bottom: 15px;
+}
+
+.publications ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.publications li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.publications a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.publications a:hover {
+  text-shadow:
+    0 0 5px #60a5fa,
+    0 0 10px #60a5fa;
+}
+
