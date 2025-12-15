@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+}
+
+h1 {
+  color: #F6F5FA;
+}
+
+.profile img {
+  width: 160px;        /* change this value */
+  height: 160px;
+  max-width: 100%;
+  object-fit: cover;  /* prevents stretching */
+  border-radius: 50%; /* circular photo */
+}
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-link img {
+  border-radius: 0;
+  width: 25px;
+  height: 20px;
+}
+
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 30px 0;
+}
+
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.separator {
+  width: 1px;
+  height: 16px;
+  background-color: #ccc;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.8em;
+  color: #555;
+}
+
+
+body {
+  position: relative;
+  background: #131314;
+  overflow: hidden;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Create multiple dots */
+body::before {
+  content: "";
+  position: fixed;
+  top: -100px; left: -100px; right: -100px; bottom: -100px;
+  background:
+    radial-gradient(circle 8px, #D4D1E0 90%, transparent 91%) 0 0,
+    radial-gradient(circle 8px, #D4D1E0 90%, transparent 91%) 40px 40px;
+  background-size: 80px 80px;
+  animation: moveDots 10s linear infinite;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+@keyframes moveDots {
+  from {
+    background-position: 0 0, 40px 40px;
+  }
+  to {
+    background-position: 80px 80px, 120px 120px;
+  }
+}
