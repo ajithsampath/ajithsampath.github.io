@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="bg"></canvas>
   <header class="profile">
     <img src="images/me.jpeg" alt="My photo">
     <div>
@@ -23,6 +24,100 @@
     </p>  
     </div>
   </header>
+  <script>
+    const canvas = document.getElementById("bg");
+    const ctx = canvas.getContext("2d");
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener("resize", resize);
+
+    const N = 300;
+    const R = 4;
+    const SPEED = 2.2;
+
+    const particles = [];
+
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+
+    for (let i = 0; i < N; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * SPEED + 1.5;
+
+      const spread = 10; // initial universe size
+
+      particles.push({
+      x: cx + (Math.random() - 0.5) * spread,
+      y: cy + (Math.random() - 0.5) * spread,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+
+      // 🌌 galaxy properties
+      spin: (Math.random() - 0.5) * 0.05,
+      arms: 2 + Math.floor(Math.random() * 3),
+      phase: Math.random() * Math.PI * 2
+    });
+
+
+    }
+
+
+    function collide(p1, p2) {
+      const dx = p1.x - p2.x;
+      const dy = p1.y - p2.y;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 2 * R) {
+        const nx = dx / dist;
+        const ny = dy / dist;
+        const p = (p1.vx - p2.vx) * nx + (p1.vy - p2.vy) * ny;
+        p1.vx -= p * nx;
+        p1.vy -= p * ny;
+        p2.vx += p * nx;
+        p2.vy += p * ny;
+      }
+    }
+
+    function update() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+      for (let i = 0; i < N; i++) {
+        const p = particles[i];
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // eternal slowdown (never reaches zero)
+        const damping = 0.9993;
+        p.vx *= damping;
+        p.vy *= damping;
+
+
+        if (p.x < R || p.x > canvas.width - R) p.vx *= -1;
+        if (p.y < R || p.y > canvas.height - R) p.vy *= -1;
+
+        for (let j = i + 1; j < N; j++) {
+          collide(p, particles[j]);
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, R, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(229, 231, 235, 0.2)";
+        ctx.fill();
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    update();
+
+ 
+
+  </script>
 
 
   <footer>

@@ -3,10 +3,16 @@ body {
   max-width: 800px;
   margin: auto;
   padding: 40px;
+  background: #0b1220;
 }
 
 h1 {
   color: #F6F5FA;
+}
+
+p {
+  line-height: 1.6;
+  color: #E1E0E5;
 }
 
 .profile img {
@@ -67,33 +73,11 @@ footer {
 }
 
 
-body {
-  position: relative;
-  background: #131314;
-  overflow: hidden;
-  color: white;
-  min-height: 100vh;
-}
-
-/* Create multiple dots */
-body::before {
-  content: "";
+#bg {
   position: fixed;
-  top: -100px; left: -100px; right: -100px; bottom: -100px;
-  background:
-    radial-gradient(circle 8px, #D4D1E0 90%, transparent 91%) 0 0,
-    radial-gradient(circle 8px, #D4D1E0 90%, transparent 91%) 40px 40px;
-  background-size: 80px 80px;
-  animation: moveDots 10s linear infinite;
-  opacity: 0.2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
-}
-
-@keyframes moveDots {
-  from {
-    background-position: 0 0, 40px 40px;
-  }
-  to {
-    background-position: 80px 80px, 120px 120px;
-  }
 }
