@@ -1,139 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ajith's Homepage</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <nav>
-  <a href="index.html">Home</a> |
-  <a href="about.html">About</a> |
-  <a href="publications.html">Publications</a> | 
-  <a href="AjithResumeOfficial.pdf" target="_blank">CV</a> 
-  </nav>
-
-  <canvas id="bg"></canvas>
-  <section class="profile">
-    <div>
-    <h1>Ajith Sampath</h1>
-    <p>Postdoctoral researcher @ University of Geneva</p>
-    <p>Radio Astronomer and Cosmologist</p>
-    <p>Former PhD student at University of KwaZulu-Natal, South Africa</p>
-    
-    <p class="links">
-      <a href="https://github.com/ajithsampath" target="_blank" rel="noopener"class="icon-link"> 
-        <img src="images/github_w.svg" alt="GitHub">GitHub</a> <span class="separator"></span>
-      <a href="mailto:ajith.sampath@unige.ch" target="_blank" rel="noopener" class="icon-link">
-    <img src="images/outlook.svg" alt="Office">Office</a> <span class="separator"></span>
-      <a href="mailto:ajithsampath1997@gmail.com" target="_blank" rel="noopener"class="icon-link">
-    <img src="images/gmail.svg" alt="Personal">Personal</a>
-    </p>  
-    </div>
-  </section>
-
-<!---
-  <script>
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener("resize", resize);
-
-    const N = 300;
-    const R = 4;
-    const SPEED = 2.2;
-
-    const particles = [];
-
-    const cx = canvas.width / 2;
-    const cy = canvas.height / 2;
-
-    for (let i = 0; i < N; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * SPEED + 1.5;
-
-      const spread = 10; // initial universe size
-
-      particles.push({
-      x: cx + (Math.random() - 0.5) * spread,
-      y: cy + (Math.random() - 0.5) * spread,
-      vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed,
-
-      // 🌌 galaxy properties
-      spin: (Math.random() - 0.5) * 0.05,
-      arms: 2 + Math.floor(Math.random() * 3),
-      phase: Math.random() * Math.PI * 2
-    });
-
-
-    }
-
-
-    function collide(p1, p2) {
-      const dx = p1.x - p2.x;
-      const dy = p1.y - p2.y;
-      const dist = Math.hypot(dx, dy);
-      if (dist < 2 * R) {
-        const nx = dx / dist;
-        const ny = dy / dist;
-        const p = (p1.vx - p2.vx) * nx + (p1.vy - p2.vy) * ny;
-        p1.vx -= p * nx;
-        p1.vy -= p * ny;
-        p2.vx += p * nx;
-        p2.vy += p * ny;
-      }
-    }
-    const maxLineDistance = 120;
-    function update() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-
-      for (let i = 0; i < N; i++) {
-        const p = particles[i];
-
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // eternal slowdown (never reaches zero)
-        const damping = 0.9993;
-        p.vx *= damping;
-        p.vy *= damping;
-
-
-        if (p.x < R || p.x > canvas.width - R) p.vx *= -1;
-        if (p.y < R || p.y > canvas.height - R) p.vy *= -1;
-
-        for (let j = i + 1; j < N; j++) {
-          collide(p, particles[j]);
-        }
-        
-
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, R, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(229, 231, 235, 0.2)";
-        ctx.fill();
-      }
-
-      requestAnimationFrame(update);
-    }
-
-    update();
-
- 
-
-  </script>
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<html>
+	<head>
+		<title>Ajith Sampath</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Ajith Sampath &mdash; postdoctoral researcher at the University of Geneva working on 21&thinsp;cm cosmology and HIRAX." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-  <footer>
-    &copy; 2025 Ajith Sampath
-  </footer>
-</body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="index.html" class="logo"><strong>Ajith Sampath</strong> <span>Radio astronomer &amp; cosmologist</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="publications.html">Publications</a></li>
+							<li><a href="AjithResumeOfficial.pdf" target="_blank" rel="noopener">CV</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="AjithResumeOfficial.pdf" target="_blank" rel="noopener" class="button primary fit">Download CV</a></li>
+							<li><a href="https://github.com/ajithsampath" target="_blank" rel="noopener" class="button fit">GitHub</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner" class="major">
+						<div class="inner">
+							<header class="major">
+								<h1>Ajith Sampath</h1>
+							</header>
+							<div class="content">
+								<p>Postdoctoral researcher at the University of Geneva.<br />
+								21&thinsp;cm cosmology &bull; HIRAX &bull; radio interferometry.</p>
+								<ul class="actions">
+									<li><a href="#one" class="button next scrolly">Learn more</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one" class="tiles">
+								<article>
+									<span class="image">
+										<img src="images/pic03.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="about.html" class="link">About</a></h3>
+										<p>Background, research interests and how to reach me</p>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+										<img src="images/pic05.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="publications.html" class="link">Publications</a></h3>
+										<p>Peer-reviewed papers and conference proceedings</p>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+										<img src="images/pic08.jpg" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="AjithResumeOfficial.pdf" target="_blank" rel="noopener" class="link">CV</a></h3>
+										<p>Full curriculum vitae (PDF)</p>
+									</header>
+								</article>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="inner">
+									<header class="major">
+										<h2>Research</h2>
+									</header>
+									<p>I am a postdoctoral researcher at the University of Geneva and a member of the
+									Hydrogen Intensity and Real-time Analysis eXperiment (HIRAX). My work focuses on
+									21&thinsp;cm intensity mapping as a probe of cosmology &mdash; characterising radio
+									telescope beams, understanding instrumental systematics such as primary-beam
+									chromaticity, and connecting these to the accuracy of power-spectrum measurements.
+									Before Geneva I completed my PhD at the University of KwaZulu-Natal, South Africa.</p>
+									<ul class="actions">
+										<li><a href="about.html" class="button next">More about me</a></li>
+									</ul>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Office</h3>
+										<a href="mailto:ajith.sampath@unige.ch">ajith.sampath@unige.ch</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Personal</h3>
+										<a href="mailto:ajithsampath1997@gmail.com">ajithsampath1997@gmail.com</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon brands alt fa-github"></span>
+										<h3>GitHub</h3>
+										<a href="https://github.com/ajithsampath" target="_blank" rel="noopener">github.com/ajithsampath</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>University of Geneva<br />
+										Geneva, Switzerland</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/ajithsampath" target="_blank" rel="noopener" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="mailto:ajith.sampath@unige.ch" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Ajith Sampath</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
